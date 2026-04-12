@@ -36,5 +36,8 @@ pipeline {
             sh 'docker stop test-container || true'
             sh 'docker rm test-container || true'
         }
+        success {
+            sh 'docker run -d -p 8000:8000 --name prod-container $IMAGE_NAME'
+        }
     }
 }
