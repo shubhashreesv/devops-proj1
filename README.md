@@ -76,3 +76,14 @@ Save
 
 Note: To Test BUILD Manually: Click Build Now (It will fail if you dont have Jenkins File in the repo)
 
+
+### GITHUB WEB HOOK SETUP
+Go to GitHub Repo > Settings > Webhooks > Add webhook
+- Payload URL: http://<your-vm-ip>:8080/github-webhook/
+
+
+In Jenkins
+Open your pipeline job:
+Configure → Build Triggers
+Enable:GitHub hook trigger for GITScm polling
+
