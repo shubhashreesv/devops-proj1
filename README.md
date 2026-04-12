@@ -87,3 +87,19 @@ Open your pipeline job:
 Configure → Build Triggers
 Enable:GitHub hook trigger for GITScm polling
 
+### ISSUE WITH YOUR IP IN WEBHOOK AND SOLUTION: 
+http://192.168.72.129:8080/github-webhook/ -> This IP is not accessible from GitHub servers, so you need to use a public IP 
+
+Solution: Use ngrok to expose your local Jenkins server to the internet
+
+sudo apt install unzip -y
+
+Download: wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip
+Unzip: unzip ngrok-v3-stable-linux-amd64.zip
+
+Then RUN: ./ngrok http 8080
+You will get a public URL like https://<random-id>.ngrok-free.app
+
+Use this URL in your GitHub webhook setup
+
+NOTE: Have an account in ngrok before this step, and login using ./ngrok authtoken <your-ngrok-auth-token>
