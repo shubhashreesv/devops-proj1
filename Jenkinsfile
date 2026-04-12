@@ -15,9 +15,9 @@ pipeline {
 
         stage('Run Container Test') {
             steps {
-                sh 'docker run -d -p 8000:8000 --name test-container $IMAGE_NAME'
+                sh 'docker run -d --name test-container $IMAGE_NAME'
                 sh 'sleep 5'
-                sh 'curl -f http://localhost:8000/health'
+                sh 'docker exec test-container curl -f http://localhost:8000/health'
             }
         }
 
