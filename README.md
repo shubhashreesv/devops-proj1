@@ -48,3 +48,31 @@ touch Dockerfile
 
 docker build -t docker-ci .
 docker run -d -p 8000:8000 docker-ci
+
+### INITIALIZE GIT REPO:
+git init
+git add .
+git commit -m "Initial commit - FastAPI Docker CI project"
+
+Go to GitHub > Click New Repository > Setup
+
+git remote add origin https://github.com/<your-username>/devops-ci-project.git
+git branch -M main
+git push -u origin main
+
+### JENKINS SETUP:
+- Install Jenkins on your VM
+- Install necessary plugins (Git, Docker, etc.)
+- Open http://<your-vm-ip>:8080 and set up Jenkins
+
+Click New Item > Pipeline > OK
+Pipeline section > Pipeline script from SCM:
+- SCM: Git
+- Repository URL: https://github.com/<your-username>/devops-proj1
+- Branch: */main
+
+Triggers Section > GitHub hook trigger for GITScm polling 
+Save
+
+Note: To Test BUILD Manually: Click Build Now (It will fail if you dont have Jenkins File in the repo)
+
