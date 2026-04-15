@@ -138,3 +138,7 @@ Whenever code is pushed to GitHub:
 * Container is tested
 * Image is pushed to Docker Hub
 
+
+git add .
+git commit -m "Initial commit"
+git push -u origin main
