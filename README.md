@@ -97,7 +97,11 @@ The Jenkinsfile defines the CI pipeline stages:
 * Run container test
 * Push image to Docker Hub
 
-## Webhook Setup
+## Webhook Setup 
+- purpose of webhook: to notify Jenkins of code changes in GitHub, triggering the CI pipeline automatically.
+- how ngrok is linked via webhook: ngrok provides a public URL that forwards requests to the local Jenkins server, allowing GitHub to trigger the Jenkins pipeline even if it's running on a local machine.
+- how ngrok connects with Jenkins: ngrok creates a secure tunnel to the local Jenkins server, enabling it to receive webhook events from GitHub and trigger the CI pipeline accordingly.
+- how local url is connected to jenkins: Jenkins is configured to listen for incoming webhook requests on a specific endpoint (e.g., /github-webhook/). Ngrok forwards the requests from the public URL to this local Jenkins endpoint, allowing Jenkins to process the webhook events and execute the CI pipeline.
 
 In GitHub:
 
@@ -140,5 +144,5 @@ Whenever code is pushed to GitHub:
 
 
 git add .
-git commit -m "Initial commit"
+git commit -m "Test Commit"
 git push -u origin main
