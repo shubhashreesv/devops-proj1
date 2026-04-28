@@ -19,19 +19,17 @@ pipeline {
         stage('Run Container Test') {
             steps {
                 sh '''
-                docker rm -f $CONTAINER_NAME || true
+                docker rm -f test-container || true
 
                 docker run -d \
-                  --name $CONTAINER_NAME \
-                  -p 8000:8000 \
-                  $IMAGE_NAME
+                --name test-container \
+                -p 8001:8000 \
+                $IMAGE_NAME
 
-                echo "Waiting for container startup..."
+                echo "Waiting for app startup..."
                 sleep 10
 
-                docker ps
-
-                curl -f http://localhost:8000/health
+                curl -f http://localhost:8001/health
                 '''
             }
         }
@@ -69,9 +67,9 @@ pipeline {
             docker rm -f prod-container || true
 
             docker run -d \
-              -p 8000:8000 \
-              --name prod-container \
-              $IMAGE_NAME
+            -p 8002:8000 \
+            --name prod-container \
+            $IMAGE_NAME
             '''
         }
     }

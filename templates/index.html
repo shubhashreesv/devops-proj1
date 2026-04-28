@@ -218,6 +218,7 @@ async function fetchLogs() {
 
         const response = await fetch('/logs');
         const logs = await response.text();
+        const recentLogs = logs.split('\n').slice(-120).join('\n');
 
         const logDiv = document.getElementById('logs');
         logDiv.innerText = logs;
@@ -236,8 +237,8 @@ async function fetchLogs() {
 
         // GitHub Trigger
         if (
-            logs.includes("GitHub Push") ||
-            logs.includes("Started by GitHub push")
+            recentLogs.includes("GitHub Push") ||
+            recentLogs.includes("Started by GitHub push")
         ) {
             setStatus("github-status", "SUCCESS", "success");
             setStatus("webhook-status", "SUCCESS", "success");

@@ -263,3 +263,64 @@
 [06:05:02] Jenkins Console: [Pipeline] End of Pipeline
 [06:05:02] Jenkins Console: ERROR: script returned exit code 1
 [06:05:02] Jenkins Console: Finished: FAILURE
+[06:05:47] Jenkins Build #14 Running
+[06:05:47] Jenkins Console: The recommended git tool is: git
+[06:05:47] Jenkins Console: No credentials specified
+[06:05:47] Jenkins Console:  > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/github-docker-ci@2/.git # timeout=10
+[06:05:47] Jenkins Console: Fetching changes from the remote Git repository
+[06:05:47] Jenkins Console:  > git config remote.origin.url https://github.com/shubhashreesv/devops-proj1 # timeout=10
+[06:05:52] Jenkins Console: [Pipeline] {
+[06:05:52] Jenkins Console: [Pipeline] stage
+[06:05:52] Jenkins Console: [Pipeline] { (Build Docker Image)
+[06:05:52] Jenkins Console: [Pipeline] sh
+[06:05:52] Jenkins Console: + docker build -t shubhashreesv/docker-ci .
+[06:05:57] Jenkins Console: 
+[06:05:57] Jenkins Console: #7 [2/4] WORKDIR /app
+[06:05:57] Jenkins Console: #7 CACHED
+[06:05:57] Jenkins Console: 
+[06:05:57] Jenkins Console: #8 [3/4] COPY . .
+[06:06:02] Jenkins Console: 
+[06:06:02] Jenkins Console: #8 [3/4] COPY . .
+[06:06:02] Jenkins Console: #8 DONE 1.9s
+[06:06:02] Jenkins Console: 
+[06:06:02] Jenkins Console: #9 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+[06:06:12] Jenkins Console: #9 13.30 Collecting docker
+[06:06:12] Jenkins Console: #9 13.35   Downloading docker-7.1.0-py3-none-any.whl (147 kB)
+[06:06:12] Jenkins Console: #9 13.45      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 147.8/147.8 kB 1.9 MB/s eta 0:00:00
+[06:06:12] Jenkins Console: #9 13.61 Collecting annotated-doc>=0.0.2
+[06:06:12] Jenkins Console: #9 13.69   Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+[06:06:18] Jenkins Console: #9 18.13 Collecting idna<4,>=2.5
+[06:06:18] Jenkins Console: #9 18.20   Downloading idna-3.13-py3-none-any.whl (68 kB)
+[06:06:18] Jenkins Console: #9 18.21      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.6/68.6 kB 10.4 MB/s eta 0:00:00
+[06:06:18] Jenkins Console: #9 18.49 Collecting annotated-types>=0.6.0
+[06:06:18] Jenkins Console: #9 18.53   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+[06:06:28] Jenkins Console: #9 25.78   Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+[06:06:28] Jenkins Console: #9 25.80      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.6/113.6 kB 35.0 MB/s eta 0:00:00
+[06:06:28] Jenkins Console: #9 26.22 Collecting exceptiongroup>=1.0.2
+[06:06:28] Jenkins Console: #9 26.26   Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+[06:06:28] Jenkins Console: #9 26.80 Installing collected packages: urllib3, typing-extensions, python-dotenv, idna, h11, click, charset_normalizer, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, requests, pydantic-core, exceptiongroup, pydantic, docker, anyio, starlette, fastapi
+[06:06:33] Jenkins Console: #9 30.89 [notice] To update, run: pip install --upgrade pip
+[06:06:33] Jenkins Console: #9 DONE 32.0s
+[06:06:33] Jenkins Console: 
+[06:06:33] Jenkins Console: #10 exporting to image
+[06:06:33] Jenkins Console: #10 exporting layers
+[06:06:38] Jenkins Console: #10 exporting attestation manifest sha256:2543466073011fe349a7679210da8280b18b746559a54d5c480b5a52813c5857 0.2s done
+[06:06:38] Jenkins Console: #10 exporting manifest list sha256:6aeb1e2bba4de36716891e3beaed53e575dc225f031a96a2d793682079c0b8ce
+[06:06:38] Jenkins Console: #10 exporting manifest list sha256:6aeb1e2bba4de36716891e3beaed53e575dc225f031a96a2d793682079c0b8ce 0.0s done
+[06:06:38] Jenkins Console: #10 naming to docker.io/shubhashreesv/docker-ci:latest done
+[06:06:38] Jenkins Console: #10 unpacking to docker.io/shubhashreesv/docker-ci:latest
+[06:06:43] Jenkins Console: #10 DONE 11.2s
+[06:06:43] Jenkins Console: [Pipeline] }
+[06:06:43] Jenkins Console: [Pipeline] // stage
+[06:06:43] Jenkins Console: [Pipeline] stage
+[06:06:43] Jenkins Console: [Pipeline] { (Run Container Test)
+[06:06:48] Jenkins Console: [Pipeline] sh
+[06:06:48] Jenkins Console: + docker rm -f test-container
+[06:06:48] Jenkins Console: Error response from daemon: No such container: test-container
+[06:06:48] Jenkins Console: + docker run -d --name test-container -p 8000:8000 shubhashreesv/docker-ci
+[06:06:48] Jenkins Console: f15f27c30eb90f735455dec81dcc34933df99604477a3165ac163ab65346e986
+[06:06:53] Jenkins Console: [Pipeline] }
+[06:06:53] Jenkins Console: [Pipeline] // node
+[06:06:53] Jenkins Console: [Pipeline] End of Pipeline
+[06:06:53] Jenkins Console: ERROR: script returned exit code 125
+[06:06:53] Jenkins Console: Finished: FAILURE
