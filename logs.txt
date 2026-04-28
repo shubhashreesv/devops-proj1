@@ -1,0 +1,6 @@
+[05:17:42] Jenkins Build #10 Finished -> FAILURE
+[05:17:42] Jenkins Console: [Pipeline] }
+[05:17:42] Jenkins Console: [Pipeline] // node
+[05:17:42] Jenkins Console: [Pipeline] End of Pipeline
+[05:17:42] Jenkins Console: ERROR: script returned exit code 1
+[05:17:42] Jenkins Console: Finished: FAILURE

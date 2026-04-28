@@ -7,7 +7,10 @@ import threading
 import time
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
@@ -16,11 +19,11 @@ LOG_FILE = "logs.txt"
 # ---------------------------
 # Jenkins Config
 # ---------------------------
-JENKINS_URL = "http://localhost:8080/job/ci-docker-project/lastBuild/api/json"
-JENKINS_USER = "shubhashreesv"
-JENKINS_TOKEN = "112bb130f7304515be6c374df98ec40343" 
-CONSOLE_URL = "http://localhost:8080/job/ci-docker-project/lastBuild/consoleText"
+JENKINS_URL = os.getenv("JENKINS_URL")
+CONSOLE_URL = os.getenv("CONSOLE_URL")
 
+JENKINS_USER = os.getenv("JENKINS_USER")
+JENKINS_TOKEN = os.getenv("JENKINS_TOKEN")
 
 # ---------------------------
 # Docker Client

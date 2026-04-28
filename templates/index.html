@@ -1,56 +1,267 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Realtime DevOps Logs</title>
+    <title>CI/CD Pipeline Dashboard</title>
 
     <style>
         body {
             background: #0d1117;
-            color: #58a6ff;
-            font-family: monospace;
-            padding: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
         }
 
-        h2 {
+        h1 {
+            text-align: center;
             color: #00ff88;
         }
 
-        #logs {
-            border: 1px solid #30363d;
+        p {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .info-bar {
+            display: flex;
+            justify-content: space-around;
+            background: #161b22;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-card {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .info-title {
+            color: #58a6ff;
+            font-size: 13px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .pipeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .step {
+            width: 160px;
+            background: #161b22;
+            border-radius: 12px;
             padding: 20px;
-            height: 700px;
+            text-align: center;
+            border: 1px solid #30363d;
+        }
+
+        .step h3 {
+            font-size: 15px;
+        }
+
+        .status {
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .success {
+            color: #00ff88;
+        }
+
+        .failed {
+            color: #ff4d4d;
+        }
+
+        .running {
+            color: #ffd700;
+        }
+
+        .waiting {
+            color: #999;
+        }
+
+        .arrow {
+            font-size: 28px;
+            color: #58a6ff;
+        }
+
+        .logs-container {
+            margin-top: 40px;
+        }
+
+        .logs-title {
+            margin-bottom: 10px;
+            color: #58a6ff;
+        }
+
+        #logs {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+            height: 300px;
             overflow-y: auto;
             white-space: pre-wrap;
-            background: #161b22;
-            border-radius: 8px;
-            line-height: 1.6;
+            font-family: monospace;
+            line-height: 1.5;
+            color: #c9d1d9;
         }
+
     </style>
 </head>
 <body>
 
-<h2>Realtime DevOps Dashboard</h2>
+<h1>CI/CD Pipeline Dashboard</h1>
 
-<div id="logs">Loading logs...</div>
+<p>
+Developer → GitHub → Webhook → Jenkins → Docker Build → Test → Push to Registry
+</p>
+
+<div class="info-bar">
+
+    <div class="info-card">
+        <div class="info-title">VM IP</div>
+        <div class="info-value" id="vm-ip">192.168.72.129</div>
+    </div>
+
+    <div class="info-card">
+        <div class="info-title">Jenkins Job</div>
+        <div class="info-value">ci-docker-project</div>
+    </div>
+
+    <div class="info-card">
+        <div class="info-title">Docker</div>
+        <div class="info-value" id="docker-health">Connected</div>
+    </div>
+
+    <div class="info-card">
+        <div class="info-title">Last Update</div>
+        <div class="info-value" id="last-update">--</div>
+    </div>
+
+</div>
+
+<div class="pipeline">
+
+    <div class="step">
+        <h3>Developer Push</h3>
+        <div class="status waiting" id="github-status">WAITING</div>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+        <h3>Webhook Trigger</h3>
+        <div class="status waiting" id="webhook-status">WAITING</div>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+        <h3>Jenkins Build</h3>
+        <div class="status waiting" id="jenkins-status">WAITING</div>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+        <h3>Docker Build</h3>
+        <div class="status waiting" id="docker-status">WAITING</div>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+        <h3>Container Test</h3>
+        <div class="status waiting" id="test-status">WAITING</div>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+        <h3>Push Registry</h3>
+        <div class="status waiting" id="push-status">WAITING</div>
+    </div>
+
+</div>
+
+<div class="logs-container">
+
+    <h3 class="logs-title">Live Logs</h3>
+
+    <div id="logs">Loading logs...</div>
+
+</div>
 
 <script>
+
+function setStatus(id, status, cls) {
+    const el = document.getElementById(id);
+    el.innerText = status;
+    el.className = "status " + cls;
+}
+
 async function fetchLogs() {
+
     try {
+
         const response = await fetch('/logs');
-        const data = await response.text();
+        const logs = await response.text();
+
+        document.getElementById('logs').innerText = logs;
 
         const logDiv = document.getElementById('logs');
-
-        logDiv.innerText = data;
         logDiv.scrollTop = logDiv.scrollHeight;
+
+        document.getElementById('last-update').innerText =
+            new Date().toLocaleTimeString();
+
+        if (logs.includes("GitHub Push")) {
+            setStatus("github-status", "SUCCESS", "success");
+            setStatus("webhook-status", "SUCCESS", "success");
+        }
+
+        if (logs.includes("Running")) {
+            setStatus("jenkins-status", "RUNNING", "running");
+        }
+
+        if (logs.includes("Docker")) {
+            setStatus("docker-status", "SUCCESS", "success");
+        }
+
+        if (logs.includes("Finished -> SUCCESS")) {
+            setStatus("jenkins-status", "SUCCESS", "success");
+            setStatus("docker-status", "SUCCESS", "success");
+            setStatus("test-status", "SUCCESS", "success");
+            setStatus("push-status", "SUCCESS", "success");
+        }
+
+        if (logs.includes("FAILURE")) {
+            setStatus("jenkins-status", "FAILED", "failed");
+            setStatus("docker-status", "FAILED", "failed");
+            setStatus("test-status", "FAILED", "failed");
+            setStatus("push-status", "FAILED", "failed");
+        }
 
     } catch (err) {
         console.error(err);
     }
 }
 
-setInterval(fetchLogs, 2000);
+setInterval(fetchLogs, 3000);
 fetchLogs();
+
 </script>
 
 </body>
