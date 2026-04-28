@@ -146,3 +146,30 @@ Whenever code is pushed to GitHub:
 git add .
 git commit -m "Test Commit"
 git push -u origin main
+
+
+
+# Incase of Disk Space issue:
+
+## Issue: 
+Your Jenkins server stores:
+
+Build workspaces
+Docker images
+Containers
+Build logs
+Git clones
+Cache files
+
+Over time these fill disk space.
+
+Your node becomes: offline
+until storage is cleaned.
+
+Thus RUN: 
+
+docker system prune -a -f
+sudo rm -rf /var/lib/jenkins/workspace/*
+sudo systemctl restart jenkins
+
+Check space: df -h

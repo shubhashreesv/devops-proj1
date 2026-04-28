@@ -558,3 +558,24 @@
 [06:31:55] Jenkins Console: [Pipeline] End of Pipeline
 [06:31:55] Jenkins Console: ERROR: script returned exit code 1
 [06:31:55] Jenkins Console: Finished: FAILURE
+[06:34:17] Jenkins Build #18 Running
+[06:34:17] Jenkins Console: Started by GitHub push by shubhashreesv
+[06:34:17] Jenkins Console: Obtained Jenkinsfile from git https://github.com/shubhashreesv/devops-proj1
+[06:34:17] Jenkins Console: [Pipeline] Start of Pipeline
+[06:34:17] Jenkins Console: [Pipeline] node
+[06:34:32] Jenkins Console: Obtained Jenkinsfile from git https://github.com/shubhashreesv/devops-proj1
+[06:34:32] Jenkins Console: [Pipeline] Start of Pipeline
+[06:34:32] Jenkins Console: [Pipeline] node
+[06:34:32] Jenkins Console: Still waiting to schedule task
+[06:34:32] Jenkins Console: Waiting for next available executor
+[06:35:43] Jenkins Console: [Pipeline] // stage
+[06:35:43] Jenkins Console: [Pipeline] End of Pipeline
+[06:35:43] Jenkins Console: Queue task was cancelled
+[06:35:43] Jenkins Console: org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 889946f3-32a0-4c09-b9d8-1c60d59519a0
+[06:35:43] Jenkins Console: Finished: ABORTED
+[06:40:01] Jenkins Error: HTTPConnectionPool(host='192.168.72.129', port=8080): Max retries exceeded with url: /job/github-docker-ci/lastBuild/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8fd25ae3e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[06:40:06] Jenkins Error: HTTPConnectionPool(host='192.168.72.129', port=8080): Max retries exceeded with url: /job/github-docker-ci/lastBuild/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8fd25ad750>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[06:40:54] Jenkins Error: HTTPConnectionPool(host='192.168.72.129', port=8080): Max retries exceeded with url: /job/github-docker-ci/lastBuild/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8fd25af670>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[06:41:18] Jenkins Error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[06:41:23] Jenkins Error: HTTPConnectionPool(host='192.168.72.129', port=8080): Max retries exceeded with url: /job/github-docker-ci/lastBuild/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8fd25ad660>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[06:41:28] Jenkins Error: HTTPConnectionPool(host='192.168.72.129', port=8080): Max retries exceeded with url: /job/github-docker-ci/lastBuild/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8fd25afdf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
