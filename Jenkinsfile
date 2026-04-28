@@ -26,10 +26,23 @@ pipeline {
                 -p 8001:8000 \
                 $IMAGE_NAME
 
-                echo "Waiting for app startup..."
-                sleep 10
+                docker logs test-container || true
+                echo "Waiting for FastAPI startup..."
 
-                curl -f http://localhost:8001/health
+                for i in {1..20}
+                do
+                    sleep 3
+
+                    if curl -f http://localhost:8001/health; then
+                        echo "Health check passed"
+                        exit 0
+                    fi
+
+                    echo "Retrying health check..."
+                done
+
+                echo "Health check failed"
+                exit 1
                 '''
             }
         }

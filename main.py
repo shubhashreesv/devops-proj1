@@ -188,3 +188,9 @@ threading.Thread(target=monitor_docker, daemon=True).start()
 @app.get("/health")
 async def health():
     return {"status": "healthy"}
+
+@app.on_event("startup")
+async def startup_event():
+    write_log("Dashboard monitoring started")
+
+    
