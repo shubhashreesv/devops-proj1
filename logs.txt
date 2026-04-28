@@ -22,3 +22,244 @@
 [05:32:15] Jenkins Console: 	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$categoryThreadFactory$0(CpsVmExecutorService.java:50)
 [05:32:15] Jenkins Console: 	at java.base/java.lang.Thread.run(Thread.java:1583)
 [05:32:15] Jenkins Console: Finished: FAILURE
+[05:33:41] Jenkins Build #12 Running
+[05:33:41] Jenkins Console: Started by GitHub push by shubhashreesv
+[05:33:41] Jenkins Console: Obtained Jenkinsfile from git https://github.com/shubhashreesv/devops-proj1
+[05:33:41] Jenkins Console: [Pipeline] Start of Pipeline
+[05:33:46] Jenkins Console:  > git init /var/lib/jenkins/workspace/github-docker-ci@2 # timeout=10
+[05:33:46] Jenkins Console: Fetching upstream changes from https://github.com/shubhashreesv/devops-proj1
+[05:33:46] Jenkins Console:  > git --version # timeout=10
+[05:33:46] Jenkins Console:  > git --version # 'git version 2.34.1'
+[05:33:46] Jenkins Console:  > git fetch --tags --force --progress -- https://github.com/shubhashreesv/devops-proj1 +refs/heads/*:refs/remotes/origin/* # timeout=10
+[05:33:56] Jenkins Console: 
+[05:33:56] Jenkins Console: #3 [auth] library/python:pull token for registry-1.docker.io
+[05:33:56] Jenkins Console: #3 DONE 0.0s
+[05:33:56] Jenkins Console: 
+[05:33:56] Jenkins Console: #2 [internal] load metadata for docker.io/library/python:3.9
+[05:34:01] Jenkins Console: #6 resolve docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913 0.1s done
+[05:34:01] Jenkins Console: #6 sha256:081ccf923272c30c6072c6ff1617d9072e03ab2a90a431951d325d45e296962b 0B / 6.10MB 0.2s
+[05:34:01] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 0B / 20.37MB 0.2s
+[05:34:01] Jenkins Console: #6 sha256:91c91c91f1d23f4edf4280a8fe935f14340fec43a7a3576149a7cffcf70c2f9b 0B / 250B 0.2s
+[05:34:01] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 0B / 235.93MB 0.2s
+[05:34:07] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 2.10MB / 20.37MB 4.4s
+[05:34:07] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 3.15MB / 20.37MB 5.1s
+[05:34:07] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 1.05MB / 235.93MB 5.3s
+[05:34:07] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 4.19MB / 20.37MB 5.9s
+[05:34:07] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 4.19MB / 67.78MB 3.6s
+[05:34:12] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 7.34MB / 20.37MB 8.6s
+[05:34:12] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 1.05MB / 49.28MB 5.3s
+[05:34:12] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 8.39MB / 20.37MB 9.8s
+[05:34:12] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 3.15MB / 235.93MB 10.4s
+[05:34:12] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 9.44MB / 20.37MB 10.7s
+[05:34:17] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 13.63MB / 20.37MB 13.8s
+[05:34:17] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 14.68MB / 20.37MB 14.7s
+[05:34:17] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 16.78MB / 67.78MB 12.5s
+[05:34:17] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 6.29MB / 235.93MB 15.5s
+[05:34:17] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 15.73MB / 20.37MB 16.1s
+[05:34:22] Jenkins Console: #6 sha256:c9723aa529b03c40e66d0aee927a410b4719528ab865af6e0bac1b7c9b10829e 20.37MB / 20.37MB 20.0s done
+[05:34:22] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 0B / 25.62MB 0.2s
+[05:34:22] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 10.49MB / 235.93MB 20.6s
+[05:34:22] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 25.17MB / 67.78MB 18.6s
+[05:34:22] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 9.44MB / 49.28MB 18.0s
+[05:34:27] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 2.10MB / 25.62MB 3.5s
+[05:34:27] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 29.36MB / 67.78MB 22.5s
+[05:34:27] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 16.78MB / 235.93MB 25.7s
+[05:34:27] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 12.58MB / 49.28MB 22.8s
+[05:34:27] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 4.19MB / 25.62MB 5.9s
+[05:34:32] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 8.39MB / 25.62MB 9.5s
+[05:34:32] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 15.73MB / 49.28MB 26.7s
+[05:34:32] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 22.02MB / 235.93MB 30.8s
+[05:34:32] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 10.49MB / 25.62MB 11.0s
+[05:34:32] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 36.70MB / 67.78MB 29.0s
+[05:34:37] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 18.87MB / 49.28MB 30.8s
+[05:34:37] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 40.89MB / 67.78MB 32.4s
+[05:34:37] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 14.68MB / 25.62MB 14.6s
+[05:34:37] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 28.31MB / 235.93MB 35.9s
+[05:34:37] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 16.78MB / 25.62MB 16.5s
+[05:34:42] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 20.97MB / 25.62MB 19.4s
+[05:34:42] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 23.07MB / 25.62MB 20.6s
+[05:34:42] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 34.60MB / 235.93MB 41.0s
+[05:34:42] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 24.12MB / 49.28MB 38.7s
+[05:34:42] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 25.17MB / 25.62MB 21.8s
+[05:34:48] Jenkins Console: #6 sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 25.62MB / 25.62MB 22.0s done
+[05:34:48] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 49.28MB / 67.78MB 40.7s
+[05:34:48] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 27.26MB / 49.28MB 42.9s
+[05:34:48] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 44.04MB / 235.93MB 46.1s
+[05:34:48] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 53.48MB / 67.78MB 44.1s
+[05:34:53] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 53.48MB / 67.78MB 44.1s
+[05:34:53] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 30.38MB / 49.28MB 45.5s
+[05:34:53] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 57.67MB / 67.78MB 47.1s
+[05:34:53] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 54.53MB / 235.93MB 51.2s
+[05:34:53] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 33.55MB / 49.28MB 48.2s
+[05:34:58] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 33.55MB / 49.28MB 48.2s
+[05:34:58] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 61.87MB / 67.78MB 50.7s
+[05:34:58] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 36.70MB / 49.28MB 51.3s
+[05:34:58] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 66.06MB / 235.93MB 56.3s
+[05:34:58] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 66.06MB / 67.78MB 54.0s
+[05:35:03] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 66.06MB / 67.78MB 54.0s
+[05:35:03] Jenkins Console: #6 sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 67.78MB / 67.78MB 55.4s done
+[05:35:03] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 39.85MB / 49.28MB 54.8s
+[05:35:03] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 77.59MB / 235.93MB 61.4s
+[05:35:03] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 42.99MB / 49.28MB 58.4s
+[05:35:08] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 39.85MB / 49.28MB 54.8s
+[05:35:08] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 77.59MB / 235.93MB 61.4s
+[05:35:08] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 42.99MB / 49.28MB 58.4s
+[05:35:08] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 46.14MB / 49.28MB 61.2s
+[05:35:08] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 88.08MB / 235.93MB 66.5s
+[05:35:13] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 46.14MB / 49.28MB 61.2s
+[05:35:13] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 88.08MB / 235.93MB 66.5s
+[05:35:13] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 49.28MB / 49.28MB 64.3s done
+[05:35:13] Jenkins Console: #6 extracting sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2
+[05:35:13] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 100.66MB / 235.93MB 71.6s
+[05:35:18] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 88.08MB / 235.93MB 66.5s
+[05:35:18] Jenkins Console: #6 sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 49.28MB / 49.28MB 64.3s done
+[05:35:18] Jenkins Console: #6 extracting sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2
+[05:35:18] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 100.66MB / 235.93MB 71.6s
+[05:35:18] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 113.25MB / 235.93MB 74.9s
+[05:35:23] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 113.25MB / 235.93MB 74.9s
+[05:35:23] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 125.83MB / 235.93MB 77.9s
+[05:35:23] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 138.41MB / 235.93MB 81.6s
+[05:35:23] Jenkins Console: #6 extracting sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 14.4s done
+[05:35:23] Jenkins Console: #6 extracting sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55
+[05:35:28] Jenkins Console: #6 extracting sha256:795dbedde24d2c72dafd2b71fe36643552e56859c0e29cdb095ed54b825fbaa2 14.4s done
+[05:35:28] Jenkins Console: #6 extracting sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55
+[05:35:28] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 150.99MB / 235.93MB 86.7s
+[05:35:28] Jenkins Console: #6 extracting sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 5.5s done
+[05:35:28] Jenkins Console: #6 extracting sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13
+[05:35:33] Jenkins Console: #6 extracting sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55
+[05:35:33] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 150.99MB / 235.93MB 86.7s
+[05:35:33] Jenkins Console: #6 extracting sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 5.5s done
+[05:35:33] Jenkins Console: #6 extracting sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13
+[05:35:33] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 163.58MB / 235.93MB 91.2s
+[05:35:39] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 150.99MB / 235.93MB 86.7s
+[05:35:39] Jenkins Console: #6 extracting sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 5.5s done
+[05:35:39] Jenkins Console: #6 extracting sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13
+[05:35:39] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 163.58MB / 235.93MB 91.2s
+[05:35:39] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 176.16MB / 235.93MB 95.6s
+[05:35:44] Jenkins Console: #6 extracting sha256:89d573bf42b377ce6a5a0451c15388849686fa4058efd68999f3b014daeb5b55 5.5s done
+[05:35:44] Jenkins Console: #6 extracting sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13
+[05:35:44] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 163.58MB / 235.93MB 91.2s
+[05:35:44] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 176.16MB / 235.93MB 95.6s
+[05:35:44] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 188.74MB / 235.93MB 100.2s
+[05:35:49] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 163.58MB / 235.93MB 91.2s
+[05:35:49] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 176.16MB / 235.93MB 95.6s
+[05:35:49] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 188.74MB / 235.93MB 100.2s
+[05:35:49] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 197.13MB / 235.93MB 105.3s
+[05:35:49] Jenkins Console: #6 extracting sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 19.2s done
+[05:35:54] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 176.16MB / 235.93MB 95.6s
+[05:35:54] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 188.74MB / 235.93MB 100.2s
+[05:35:54] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 197.13MB / 235.93MB 105.3s
+[05:35:54] Jenkins Console: #6 extracting sha256:26dfe2fac1c486e9aaf41d1028ed30be2c442aa84af44462bc7bac8c148ffb13 19.2s done
+[05:35:54] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 209.72MB / 235.93MB 110.0s
+[05:35:59] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 209.72MB / 235.93MB 110.0s
+[05:35:59] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 222.30MB / 235.93MB 113.7s
+[05:35:59] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 234.88MB / 235.93MB 117.6s
+[05:35:59] Jenkins Console: #6 sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924 235.93MB / 235.93MB 117.9s done
+[05:35:59] Jenkins Console: #6 extracting sha256:79d5bd8a8d262418bf22e705535ce38c6789dc72e319d76b30aafa5c331b6924
+[05:36:50] Jenkins Console: 
+[05:36:50] Jenkins Console: #8 [3/4] COPY . .
+[05:36:50] Jenkins Console: #8 DONE 1.5s
+[05:36:50] Jenkins Console: 
+[05:36:50] Jenkins Console: #9 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+[05:37:00] Jenkins Console: #9 9.308      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/64.7 kB 1.1 MB/s eta 0:00:00
+[05:37:00] Jenkins Console: #9 9.435 Collecting python-dotenv
+[05:37:00] Jenkins Console: #9 9.502   Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+[05:37:00] Jenkins Console: #9 10.56 Collecting pydantic>=2.7.0
+[05:37:00] Jenkins Console: #9 10.63   Downloading pydantic-2.13.3-py3-none-any.whl (471 kB)
+[05:37:05] Jenkins Console: #9 14.31   Downloading idna-3.13-py3-none-any.whl (68 kB)
+[05:37:05] Jenkins Console: #9 14.36      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.6/68.6 kB 2.2 MB/s eta 0:00:00
+[05:37:05] Jenkins Console: #9 14.53 Collecting certifi>=2017.4.17
+[05:37:05] Jenkins Console: #9 14.58   Downloading certifi-2026.4.22-py3-none-any.whl (135 kB)
+[05:37:05] Jenkins Console: #9 14.65      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 1.9 MB/s eta 0:00:00
+[05:37:10] Jenkins Console: #9 14.65      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 1.9 MB/s eta 0:00:00
+[05:37:10] Jenkins Console: #9 20.04 Collecting pydantic-core==2.46.3
+[05:37:10] Jenkins Console: #9 20.11   Downloading pydantic_core-2.46.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+[05:37:10] Jenkins Console: #9 21.21      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 1.9 MB/s eta 0:00:00
+[05:37:10] Jenkins Console: #9 21.33 Collecting annotated-types>=0.6.0
+[05:37:16] Jenkins Console: #9 25.14 Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.12.1 certifi-2026.4.22 charset_normalizer-3.4.7 click-8.1.8 exceptiongroup-1.3.1 fastapi-0.128.8 h11-0.16.0 idna-3.13 pydantic-2.13.3 pydantic-core-2.46.3 python-dotenv-1.2.1 requests-2.32.5 starlette-0.49.3 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.6.3 uvicorn-0.39.0
+[05:37:16] Jenkins Console: #9 25.14 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[05:37:16] Jenkins Console: #9 25.68 
+[05:37:16] Jenkins Console: #9 25.68 [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+[05:37:16] Jenkins Console: #9 25.68 [notice] To update, run: pip install --upgrade pip
+[05:37:21] Jenkins Console: #10 exporting attestation manifest sha256:ea546025a7ad7780529182c84c3dc58ce6e6f151bdaca03dd07a43fc3f8fa829 0.1s done
+[05:37:21] Jenkins Console: #10 exporting manifest list sha256:60ecd15c44e1fbfa849df983860aa07ea0fb1ffea8f68cb8128d95be1635bc6a
+[05:37:21] Jenkins Console: #10 exporting manifest list sha256:60ecd15c44e1fbfa849df983860aa07ea0fb1ffea8f68cb8128d95be1635bc6a 0.0s done
+[05:37:21] Jenkins Console: #10 naming to docker.io/shubhashreesv/docker-ci:latest 0.0s done
+[05:37:21] Jenkins Console: #10 unpacking to docker.io/shubhashreesv/docker-ci:latest
+[05:37:26] Jenkins Console: [Pipeline] // stage
+[05:37:26] Jenkins Console: [Pipeline] stage
+[05:37:26] Jenkins Console: [Pipeline] { (Run Container Test)
+[05:37:26] Jenkins Console: [Pipeline] sh
+[05:37:26] Jenkins Console: + docker run -d --name test-container shubhashreesv/docker-ci
+[05:37:31] Jenkins Console: [Pipeline] sh
+[05:37:31] Jenkins Console: + docker run -d --name test-container shubhashreesv/docker-ci
+[05:37:31] Jenkins Console: 013368e16da80f6c4961699466fad5ab214c6d85a57ecc96a406b4db5f7c31a2
+[05:37:31] Jenkins Console: [Pipeline] sh
+[05:37:31] Jenkins Console: + sleep 5
+[05:37:36] Jenkins Console: [Pipeline] }
+[05:37:36] Jenkins Console: [Pipeline] // node
+[05:37:36] Jenkins Console: [Pipeline] End of Pipeline
+[05:37:36] Jenkins Console: ERROR: script returned exit code 1
+[05:37:36] Jenkins Console: Finished: FAILURE
+[05:40:17] Jenkins Build #13 Running
+[05:40:17] Jenkins Console:  > git config remote.origin.url https://github.com/shubhashreesv/devops-proj1 # timeout=10
+[05:40:17] Jenkins Console: Fetching upstream changes from https://github.com/shubhashreesv/devops-proj1
+[05:40:17] Jenkins Console:  > git --version # timeout=10
+[05:40:17] Jenkins Console:  > git --version # 'git version 2.34.1'
+[05:40:17] Jenkins Console:  > git fetch --tags --force --progress -- https://github.com/shubhashreesv/devops-proj1 +refs/heads/*:refs/remotes/origin/* # timeout=10
+[05:40:22] Jenkins Console: #5 DONE 0.0s
+[05:40:22] Jenkins Console: 
+[05:40:22] Jenkins Console: #6 [1/4] FROM docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913
+[05:40:22] Jenkins Console: #6 resolve docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913 0.1s done
+[05:40:22] Jenkins Console: #6 DONE 0.1s
+[05:40:27] Jenkins Console: 
+[05:40:27] Jenkins Console: #8 [3/4] COPY . .
+[05:40:27] Jenkins Console: #8 DONE 0.4s
+[05:40:27] Jenkins Console: 
+[05:40:27] Jenkins Console: #9 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+[05:40:32] Jenkins Console: #9 8.949   Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+[05:40:32] Jenkins Console: #9 9.151 Collecting starlette<1.0.0,>=0.40.0
+[05:40:32] Jenkins Console: #9 9.218   Downloading starlette-0.49.3-py3-none-any.whl (74 kB)
+[05:40:32] Jenkins Console: #9 9.269      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.3/74.3 kB 1.6 MB/s eta 0:00:00
+[05:40:32] Jenkins Console: #9 9.395 Collecting typing-extensions>=4.8.0
+[05:40:38] Jenkins Console: #9 12.95 Collecting charset_normalizer<4,>=2
+[05:40:38] Jenkins Console: #9 13.33   Downloading charset_normalizer-3.4.7-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (208 kB)
+[05:40:38] Jenkins Console: #9 13.40      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 208.4/208.4 kB 3.6 MB/s eta 0:00:00
+[05:40:38] Jenkins Console: #9 13.62 Collecting annotated-types>=0.6.0
+[05:40:38] Jenkins Console: #9 13.66   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+[05:40:43] Jenkins Console: #9 13.40      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 208.4/208.4 kB 3.6 MB/s eta 0:00:00
+[05:40:43] Jenkins Console: #9 13.62 Collecting annotated-types>=0.6.0
+[05:40:43] Jenkins Console: #9 13.66   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+[05:40:43] Jenkins Console: #9 19.13 Collecting pydantic-core==2.46.3
+[05:40:43] Jenkins Console: #9 19.20   Downloading pydantic_core-2.46.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+[05:40:48] Jenkins Console: #9 23.62 Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.12.1 certifi-2026.4.22 charset_normalizer-3.4.7 click-8.1.8 docker-7.1.0 exceptiongroup-1.3.1 fastapi-0.128.8 h11-0.16.0 idna-3.13 pydantic-2.13.3 pydantic-core-2.46.3 python-dotenv-1.2.1 requests-2.32.5 starlette-0.49.3 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.6.3 uvicorn-0.39.0
+[05:40:48] Jenkins Console: #9 23.62 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[05:40:48] Jenkins Console: #9 24.13 
+[05:40:48] Jenkins Console: #9 24.13 [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+[05:40:48] Jenkins Console: #9 24.13 [notice] To update, run: pip install --upgrade pip
+[05:40:53] Jenkins Console: #10 exporting attestation manifest sha256:6480658f7a2c8210eba1b144408eb4a54532f5206c1284070445bb707ac81038 0.0s done
+[05:40:53] Jenkins Console: #10 exporting manifest list sha256:597a2a5a2bbd4bc3795b0742ff8b1731e0bedf7ebc92127f2f1e3e98475fa7c0
+[05:40:53] Jenkins Console: #10 exporting manifest list sha256:597a2a5a2bbd4bc3795b0742ff8b1731e0bedf7ebc92127f2f1e3e98475fa7c0 0.0s done
+[05:40:53] Jenkins Console: #10 naming to docker.io/shubhashreesv/docker-ci:latest done
+[05:40:53] Jenkins Console: #10 unpacking to docker.io/shubhashreesv/docker-ci:latest
+[05:40:58] Jenkins Console: [Pipeline] stage
+[05:40:58] Jenkins Console: [Pipeline] { (Run Container Test)
+[05:40:58] Jenkins Console: [Pipeline] sh
+[05:40:58] Jenkins Console: + docker run -d --name test-container shubhashreesv/docker-ci
+[05:40:58] Jenkins Console: a7661550ee60796e3bca5e5739f79cea19d31de71eb85f7f7145788a0d1ebc4f
+[05:41:03] Jenkins Console: [Pipeline] sh
+[05:41:03] Jenkins Console: + docker run -d --name test-container shubhashreesv/docker-ci
+[05:41:03] Jenkins Console: a7661550ee60796e3bca5e5739f79cea19d31de71eb85f7f7145788a0d1ebc4f
+[05:41:03] Jenkins Console: [Pipeline] sh
+[05:41:03] Jenkins Console: + sleep 5
+[05:41:08] Jenkins Console: [Pipeline] }
+[05:41:08] Jenkins Console: [Pipeline] // node
+[05:41:08] Jenkins Console: [Pipeline] End of Pipeline
+[05:41:08] Jenkins Console: ERROR: script returned exit code 1
+[05:41:08] Jenkins Console: Finished: FAILURE
+[06:05:02] Jenkins Build #13 Finished -> FAILURE
+[06:05:02] Jenkins Console: [Pipeline] }
+[06:05:02] Jenkins Console: [Pipeline] // node
+[06:05:02] Jenkins Console: [Pipeline] End of Pipeline
+[06:05:02] Jenkins Console: ERROR: script returned exit code 1
+[06:05:02] Jenkins Console: Finished: FAILURE

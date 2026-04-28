@@ -184,3 +184,7 @@ def monitor_docker():
 # ---------------------------
 threading.Thread(target=monitor_jenkins, daemon=True).start()
 threading.Thread(target=monitor_docker, daemon=True).start()
+
+@app.get("/health")
+async def health():
+    return {"status": "healthy"}

@@ -219,39 +219,86 @@ async function fetchLogs() {
         const response = await fetch('/logs');
         const logs = await response.text();
 
-        document.getElementById('logs').innerText = logs;
-
         const logDiv = document.getElementById('logs');
+        logDiv.innerText = logs;
         logDiv.scrollTop = logDiv.scrollHeight;
 
         document.getElementById('last-update').innerText =
             new Date().toLocaleTimeString();
 
-        if (logs.includes("GitHub Push")) {
+        // Reset default states
+        setStatus("github-status", "WAITING", "waiting");
+        setStatus("webhook-status", "WAITING", "waiting");
+        setStatus("jenkins-status", "WAITING", "waiting");
+        setStatus("docker-status", "WAITING", "waiting");
+        setStatus("test-status", "WAITING", "waiting");
+        setStatus("push-status", "WAITING", "waiting");
+
+        // GitHub Trigger
+        if (
+            logs.includes("GitHub Push") ||
+            logs.includes("Started by GitHub push")
+        ) {
             setStatus("github-status", "SUCCESS", "success");
             setStatus("webhook-status", "SUCCESS", "success");
         }
 
-        if (logs.includes("Running")) {
+        // Jenkins Pipeline Started
+        if (
+            logs.includes("Start of Pipeline") ||
+            logs.includes("Pipeline")
+        ) {
             setStatus("jenkins-status", "RUNNING", "running");
         }
 
-        if (logs.includes("Docker")) {
-            setStatus("docker-status", "SUCCESS", "success");
+        // Docker Build Stage
+        if (
+            logs.includes("Build Docker Image") ||
+            logs.includes("docker build")
+        ) {
+            setStatus("docker-status", "RUNNING", "running");
         }
 
-        if (logs.includes("Finished -> SUCCESS")) {
+        // Test Stage
+        if (
+            logs.includes("test") ||
+            logs.includes("Container Test")
+        ) {
+            setStatus("test-status", "RUNNING", "running");
+        }
+
+        // Push Stage
+        if (
+            logs.includes("docker push") ||
+            logs.includes("Push image")
+        ) {
+            setStatus("push-status", "RUNNING", "running");
+        }
+
+        // Final Success
+        if (
+            logs.includes("Finished -> SUCCESS") ||
+            logs.includes("SUCCESS")
+        ) {
             setStatus("jenkins-status", "SUCCESS", "success");
             setStatus("docker-status", "SUCCESS", "success");
             setStatus("test-status", "SUCCESS", "success");
             setStatus("push-status", "SUCCESS", "success");
         }
 
-        if (logs.includes("FAILURE")) {
+        // Failure Detection
+        if (recentLogs.includes("Finished: FAILURE")) {
+
             setStatus("jenkins-status", "FAILED", "failed");
-            setStatus("docker-status", "FAILED", "failed");
-            setStatus("test-status", "FAILED", "failed");
-            setStatus("push-status", "FAILED", "failed");
+
+            if (recentLogs.includes("docker run")) {
+                setStatus("docker-status", "SUCCESS", "success");
+                setStatus("test-status", "FAILED", "failed");
+            }
+
+            if (recentLogs.includes("docker build")) {
+                setStatus("docker-status", "RUNNING", "running");
+            }
         }
 
     } catch (err) {
