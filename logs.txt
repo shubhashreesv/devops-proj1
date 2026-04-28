@@ -500,3 +500,61 @@
 [06:30:29] Jenkins Console: [Pipeline] End of Pipeline
 [06:30:29] Jenkins Console: ERROR: script returned exit code 1
 [06:30:29] Jenkins Console: Finished: FAILURE
+[06:30:44] Jenkins Build #17 Running
+[06:30:44] Jenkins Console: Started by GitHub push by shubhashreesv
+[06:30:49] Jenkins Console: Commit message: "Update Jenkinsfile"
+[06:30:49] Jenkins Console:  > git rev-list --no-walk e0cfb14c9d9aee6423bcb159306fb3a1cb64668b # timeout=10
+[06:30:49] Jenkins Console: [Pipeline] }
+[06:30:49] Jenkins Console: [Pipeline] // stage
+[06:30:49] Jenkins Console: [Pipeline] withEnv
+[06:30:54] Jenkins Console: 
+[06:30:54] Jenkins Console: #3 [auth] library/python:pull token for registry-1.docker.io
+[06:30:54] Jenkins Console: #3 DONE 0.0s
+[06:30:54] Jenkins Console: 
+[06:30:54] Jenkins Console: #2 [internal] load metadata for docker.io/library/python:3.9
+[06:30:59] Jenkins Console: 
+[06:30:59] Jenkins Console: #8 [3/4] COPY . .
+[06:30:59] Jenkins Console: #8 DONE 0.7s
+[06:30:59] Jenkins Console: 
+[06:30:59] Jenkins Console: #9 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+[06:31:09] Jenkins Console: #9 13.05      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 2.5 MB/s eta 0:00:00
+[06:31:09] Jenkins Console: #9 13.17 Collecting annotated-doc>=0.0.2
+[06:31:09] Jenkins Console: #9 13.21   Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+[06:31:09] Jenkins Console: #9 13.36 Collecting typing-inspection>=0.4.2
+[06:31:09] Jenkins Console: #9 13.42   Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+[06:31:14] Jenkins Console: #9 16.80 Collecting urllib3<3,>=1.21.1
+[06:31:14] Jenkins Console: #9 16.87   Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+[06:31:14] Jenkins Console: #9 16.90      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.6/131.6 kB 6.6 MB/s eta 0:00:00
+[06:31:14] Jenkins Console: #9 17.15 Collecting annotated-types>=0.6.0
+[06:31:14] Jenkins Console: #9 17.22   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+[06:31:24] Jenkins Console: #9 25.17   Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+[06:31:24] Jenkins Console: #9 25.21      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.6/113.6 kB 3.6 MB/s eta 0:00:00
+[06:31:24] Jenkins Console: #9 25.45 Collecting exceptiongroup>=1.0.2
+[06:31:24] Jenkins Console: #9 25.50   Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+[06:31:24] Jenkins Console: #9 26.04 Installing collected packages: urllib3, typing-extensions, python-dotenv, idna, h11, click, charset_normalizer, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, requests, pydantic-core, exceptiongroup, pydantic, docker, anyio, starlette, fastapi
+[06:31:29] Jenkins Console: #9 31.27 [notice] To update, run: pip install --upgrade pip
+[06:31:29] Jenkins Console: #9 DONE 32.4s
+[06:31:29] Jenkins Console: 
+[06:31:29] Jenkins Console: #10 exporting to image
+[06:31:29] Jenkins Console: #10 exporting layers
+[06:31:40] Jenkins Console: #10 exporting attestation manifest sha256:3f31098a48040e00e25222cc5c9b3d233f0163e0f3f018b4948ca4eef0a14fc3 0.1s done
+[06:31:40] Jenkins Console: #10 exporting manifest list sha256:0395e9e0b00e716d0b14ae674edd8eeffab27f4685f1ecb578d18ca3c8f9b7f4 0.1s done
+[06:31:40] Jenkins Console: #10 naming to docker.io/shubhashreesv/docker-ci:latest
+[06:31:40] Jenkins Console: #10 naming to docker.io/shubhashreesv/docker-ci:latest done
+[06:31:40] Jenkins Console: #10 unpacking to docker.io/shubhashreesv/docker-ci:latest
+[06:31:45] Jenkins Console: + docker rm -f test-container
+[06:31:45] Jenkins Console: Error response from daemon: No such container: test-container
+[06:31:45] Jenkins Console: + docker run -d --name test-container -p 8001:8000 shubhashreesv/docker-ci
+[06:31:45] Jenkins Console: 88315d84277e7f281c7870923a01bb0a30d256fa3fc874802ad769569f163fc0
+[06:31:45] Jenkins Console: + sleep 5
+[06:31:49] Docker [test-container] -> AssertionError: jinja2 must be installed to use Jinja2Templates
+[06:31:50] Jenkins Console:     assert jinja2 is not None, "jinja2 must be installed to use Jinja2Templates"
+[06:31:50] Jenkins Console: AssertionError: jinja2 must be installed to use Jinja2Templates
+[06:31:50] Jenkins Console: + echo Waiting for FastAPI startup...
+[06:31:50] Jenkins Console: Waiting for FastAPI startup...
+[06:31:50] Jenkins Console: + sleep 3
+[06:31:55] Jenkins Console: [Pipeline] }
+[06:31:55] Jenkins Console: [Pipeline] // node
+[06:31:55] Jenkins Console: [Pipeline] End of Pipeline
+[06:31:55] Jenkins Console: ERROR: script returned exit code 1
+[06:31:55] Jenkins Console: Finished: FAILURE
