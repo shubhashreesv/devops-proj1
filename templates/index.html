@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Realtime DevOps Logs</title>
+
+    <style>
+        body {
+            background: #0d1117;
+            color: #58a6ff;
+            font-family: monospace;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #00ff88;
+        }
+
+        #logs {
+            border: 1px solid #30363d;
+            padding: 20px;
+            height: 700px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            background: #161b22;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Realtime DevOps Dashboard</h2>
+
+<div id="logs">Loading logs...</div>
+
+<script>
+async function fetchLogs() {
+    try {
+        const response = await fetch('/logs');
+        const data = await response.text();
+
+        const logDiv = document.getElementById('logs');
+
+        logDiv.innerText = data;
+        logDiv.scrollTop = logDiv.scrollHeight;
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+setInterval(fetchLogs, 2000);
+fetchLogs();
+</script>
+
+</body>
+</html>
