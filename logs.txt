@@ -405,3 +405,98 @@
 [06:21:45] Jenkins Console: [Pipeline] End of Pipeline
 [06:21:45] Jenkins Console: ERROR: script returned exit code 7
 [06:21:45] Jenkins Console: Finished: FAILURE
+[06:22:56] Jenkins Build #16 Running
+[06:22:56] Jenkins Console: Started by GitHub push by shubhashreesv
+[06:22:56] Jenkins Console: Obtained Jenkinsfile from git https://github.com/shubhashreesv/devops-proj1
+[06:22:56] Jenkins Console: [Pipeline] Start of Pipeline
+[06:23:01] Jenkins Console: [Pipeline] {
+[06:23:01] Jenkins Console: [Pipeline] stage
+[06:23:01] Jenkins Console: [Pipeline] { (Build Docker Image)
+[06:23:01] Jenkins Console: [Pipeline] sh
+[06:23:01] Jenkins Console: + docker build -t shubhashreesv/docker-ci .
+[06:23:06] Jenkins Console: 
+[06:23:06] Jenkins Console: #8 [3/4] COPY . .
+[06:23:06] Jenkins Console: #8 DONE 0.8s
+[06:23:06] Jenkins Console: 
+[06:23:06] Jenkins Console: #9 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+[06:23:22] Jenkins Console: #9 14.77 Collecting typing-inspection>=0.4.2
+[06:23:22] Jenkins Console: #9 14.84   Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+[06:23:22] Jenkins Console: #9 15.13 Collecting starlette<1.0.0,>=0.40.0
+[06:23:22] Jenkins Console: #9 15.19   Downloading starlette-0.49.3-py3-none-any.whl (74 kB)
+[06:23:22] Jenkins Console: #9 15.23      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.3/74.3 kB 3.0 MB/s eta 0:00:00
+[06:23:27] Jenkins Console: #9 20.26 Collecting urllib3<3,>=1.21.1
+[06:23:27] Jenkins Console: #9 20.31   Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+[06:23:27] Jenkins Console: #9 20.38      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.6/131.6 kB 2.4 MB/s eta 0:00:00
+[06:23:27] Jenkins Console: #9 20.64 Collecting annotated-types>=0.6.0
+[06:23:27] Jenkins Console: #9 20.70   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+[06:23:37] Jenkins Console: #9 29.02   Downloading pydantic_core-2.46.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+[06:23:37] Jenkins Console: #9 30.72      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 1.2 MB/s eta 0:00:00
+[06:23:37] Jenkins Console: #9 30.93 Collecting anyio<5,>=3.6.2
+[06:23:37] Jenkins Console: #9 30.99   Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+[06:23:37] Jenkins Console: #9 31.05      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.6/113.6 kB 2.2 MB/s eta 0:00:00
+[06:23:42] Jenkins Console: #9 30.99   Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+[06:23:42] Jenkins Console: #9 31.05      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.6/113.6 kB 2.2 MB/s eta 0:00:00
+[06:23:42] Jenkins Console: #9 31.31 Collecting exceptiongroup>=1.0.2
+[06:23:42] Jenkins Console: #9 31.37   Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+[06:23:42] Jenkins Console: #9 32.01 Installing collected packages: urllib3, typing-extensions, python-dotenv, idna, h11, click, charset_normalizer, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, requests, pydantic-core, exceptiongroup, pydantic, docker, anyio, starlette, fastapi
+[06:23:47] Jenkins Console: #9 36.95 [notice] To update, run: pip install --upgrade pip
+[06:23:47] Jenkins Console: #9 DONE 38.0s
+[06:23:47] Jenkins Console: 
+[06:23:47] Jenkins Console: #10 exporting to image
+[06:23:47] Jenkins Console: #10 exporting layers
+[06:23:52] Jenkins Console: #10 exporting attestation manifest sha256:d4303059120111ab9b3394199047b33592133106ca0e7e5a972ce3844e70b6fb 0.1s done
+[06:23:52] Jenkins Console: #10 exporting manifest list sha256:68e7228b5f9fc516b65bdbe5deadb30932621a451a849bf98907c132bead7f81 0.0s done
+[06:23:52] Jenkins Console: #10 naming to docker.io/shubhashreesv/docker-ci:latest
+[06:23:52] Jenkins Console: #10 naming to docker.io/shubhashreesv/docker-ci:latest 0.0s done
+[06:23:52] Jenkins Console: #10 unpacking to docker.io/shubhashreesv/docker-ci:latest
+[06:23:57] Jenkins Console: [Pipeline] { (Run Container Test)
+[06:23:57] Jenkins Console: [Pipeline] sh
+[06:23:57] Jenkins Console: + docker rm -f test-container
+[06:23:57] Jenkins Console: Error response from daemon: No such container: test-container
+[06:23:57] Jenkins Console: + docker run -d --name test-container -p 8001:8000 shubhashreesv/docker-ci
+[06:24:02] Jenkins Console: 02ef3d946966756dc9a1ff20174cd16e1d11d5d8f0d51f795d33bc668bd958d5
+[06:24:02] Jenkins Console: + docker logs test-container
+[06:24:02] Jenkins Console: + echo Waiting for FastAPI startup...
+[06:24:02] Jenkins Console: Waiting for FastAPI startup...
+[06:24:02] Jenkins Console: + sleep 3
+[06:24:02] Docker [test-container] -> AssertionError: jinja2 must be installed to use Jinja2Templates
+[06:24:07] Jenkins Console: [Pipeline] }
+[06:24:07] Jenkins Console: [Pipeline] // node
+[06:24:07] Jenkins Console: [Pipeline] End of Pipeline
+[06:24:07] Jenkins Console: ERROR: script returned exit code 1
+[06:24:07] Jenkins Console: Finished: FAILURE
+[06:29:53] Dashboard monitoring started
+[06:29:53] Jenkins Build #16 Finished -> FAILURE
+[06:29:53] Jenkins Console: [Pipeline] }
+[06:29:53] Jenkins Console: [Pipeline] // node
+[06:29:53] Jenkins Console: [Pipeline] End of Pipeline
+[06:29:53] Jenkins Console: ERROR: script returned exit code 1
+[06:29:53] Jenkins Console: Finished: FAILURE
+[06:29:57] Jenkins Build #16 Finished -> FAILURE
+[06:29:57] Dashboard monitoring started
+[06:29:57] Jenkins Console: [Pipeline] }
+[06:29:57] Jenkins Console: [Pipeline] // node
+[06:29:57] Jenkins Console: [Pipeline] End of Pipeline
+[06:29:57] Jenkins Console: ERROR: script returned exit code 1
+[06:29:57] Jenkins Console: Finished: FAILURE
+[06:30:17] Dashboard monitoring started
+[06:30:17] Jenkins Build #16 Finished -> FAILURE
+[06:30:17] Jenkins Console: [Pipeline] }
+[06:30:17] Jenkins Console: [Pipeline] // node
+[06:30:17] Jenkins Console: [Pipeline] End of Pipeline
+[06:30:17] Jenkins Console: ERROR: script returned exit code 1
+[06:30:17] Jenkins Console: Finished: FAILURE
+[06:30:26] Dashboard monitoring started
+[06:30:26] Jenkins Build #16 Finished -> FAILURE
+[06:30:26] Jenkins Console: [Pipeline] }
+[06:30:26] Jenkins Console: [Pipeline] // node
+[06:30:26] Jenkins Console: [Pipeline] End of Pipeline
+[06:30:26] Jenkins Console: ERROR: script returned exit code 1
+[06:30:26] Jenkins Console: Finished: FAILURE
+[06:30:29] Dashboard monitoring started
+[06:30:29] Jenkins Build #16 Finished -> FAILURE
+[06:30:29] Jenkins Console: [Pipeline] }
+[06:30:29] Jenkins Console: [Pipeline] // node
+[06:30:29] Jenkins Console: [Pipeline] End of Pipeline
+[06:30:29] Jenkins Console: ERROR: script returned exit code 1
+[06:30:29] Jenkins Console: Finished: FAILURE

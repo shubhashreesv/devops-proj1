@@ -26,7 +26,11 @@ pipeline {
                 -p 8001:8000 \
                 $IMAGE_NAME
 
+                sleep 5
+
+                docker ps -a
                 docker logs test-container || true
+
                 echo "Waiting for FastAPI startup..."
 
                 for i in {1..20}
@@ -42,6 +46,7 @@ pipeline {
                 done
 
                 echo "Health check failed"
+                docker logs test-container || true
                 exit 1
                 '''
             }

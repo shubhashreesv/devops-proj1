@@ -28,7 +28,10 @@ JENKINS_TOKEN = os.getenv("JENKINS_TOKEN")
 # ---------------------------
 # Docker Client
 # ---------------------------
-docker_client = docker.from_env()
+try:
+    docker_client = docker.from_env()
+except Exception:
+    docker_client = None
 
 # Prevent duplicate logs
 last_console_log = ""
@@ -112,6 +115,7 @@ def monitor_jenkins():
                 JENKINS_URL,
                 auth=(JENKINS_USER, JENKINS_TOKEN)
             )
+            
 
             if response.status_code == 200:
                 data = response.json()
@@ -145,6 +149,9 @@ def monitor_jenkins():
 
                         for line in last_lines:
                             write_log(f"Jenkins Console: {line}")
+                
+                if docker_client:
+                    containers = docker_client.containers.list()
 
         except Exception as e:
             write_log(f"Jenkins Error: {str(e)}")
@@ -193,4 +200,3 @@ async def health():
 async def startup_event():
     write_log("Dashboard monitoring started")
 
-    
