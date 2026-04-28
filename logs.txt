@@ -4,3 +4,21 @@
 [05:17:42] Jenkins Console: [Pipeline] End of Pipeline
 [05:17:42] Jenkins Console: ERROR: script returned exit code 1
 [05:17:42] Jenkins Console: Finished: FAILURE
+[05:27:52] Jenkins Build #11 Running
+[05:27:52] Jenkins Console: Started by GitHub push by shubhashreesv
+[05:27:52] Jenkins Console: Obtained Jenkinsfile from git https://github.com/shubhashreesv/devops-proj1
+[05:27:57] Jenkins Console: Started by GitHub push by shubhashreesv
+[05:27:57] Jenkins Console: Obtained Jenkinsfile from git https://github.com/shubhashreesv/devops-proj1
+[05:27:57] Jenkins Console: [Pipeline] Start of Pipeline
+[05:27:57] Jenkins Console: [Pipeline] node
+[05:28:12] Jenkins Console: Obtained Jenkinsfile from git https://github.com/shubhashreesv/devops-proj1
+[05:28:12] Jenkins Console: [Pipeline] Start of Pipeline
+[05:28:12] Jenkins Console: [Pipeline] node
+[05:28:12] Jenkins Console: Still waiting to schedule task
+[05:28:12] Jenkins Console: Waiting for next available executor
+[05:31:39] Jenkins Error: HTTPConnectionPool(host='192.168.72.129', port=8080): Max retries exceeded with url: /job/github-docker-ci/lastBuild/api/json (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f71621bc910>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[05:32:15] Jenkins Console: 	at org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:136)
+[05:32:15] Jenkins Console: 	at org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:275)
+[05:32:15] Jenkins Console: 	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService.lambda$categoryThreadFactory$0(CpsVmExecutorService.java:50)
+[05:32:15] Jenkins Console: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[05:32:15] Jenkins Console: Finished: FAILURE
