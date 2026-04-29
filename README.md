@@ -172,3 +172,5 @@ sudo rm -rf /var/lib/jenkins/workspace/*
 sudo systemctl restart jenkins
 
 Check space: df -h 
+
+TEST
