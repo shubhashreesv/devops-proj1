@@ -227,7 +227,7 @@ async function fetchLogs() {
         document.getElementById('last-update').innerText =
             new Date().toLocaleTimeString();
 
-        // Reset
+        
         setStatus("github-status", "WAITING", "waiting");
         setStatus("webhook-status", "WAITING", "waiting");
         setStatus("jenkins-status", "WAITING", "waiting");
@@ -235,36 +235,28 @@ async function fetchLogs() {
         setStatus("test-status", "WAITING", "waiting");
         setStatus("push-status", "WAITING", "waiting");
 
-        // -------------------------
-        // Developer Push
-        // -------------------------
+        
         if (
             recentLogs.includes("Started by GitHub push")
         ) {
             setStatus("github-status", "SUCCESS", "success");
         }
 
-        // -------------------------
-        // Webhook Trigger
-        // -------------------------
+        
         if (
             recentLogs.includes("Obtained Jenkinsfile")
         ) {
             setStatus("webhook-status", "SUCCESS", "success");
         }
 
-        // -------------------------
-        // Jenkins Running
-        // -------------------------
+        
         if (
             recentLogs.includes("Start of Pipeline")
         ) {
             setStatus("jenkins-status", "RUNNING", "running");
         }
 
-        // -------------------------
-        // Docker Build
-        // -------------------------
+        
         if (
             recentLogs.includes("Build Docker Image") ||
             recentLogs.includes("docker build")
@@ -272,9 +264,7 @@ async function fetchLogs() {
             setStatus("docker-status", "RUNNING", "running");
         }
 
-        // -------------------------
-        // Container Test
-        // -------------------------
+        
         if (
             recentLogs.includes("Run Container Test") ||
             recentLogs.includes("curl -f")
@@ -282,18 +272,14 @@ async function fetchLogs() {
             setStatus("test-status", "RUNNING", "running");
         }
 
-        // -------------------------
-        // Push Registry
-        // -------------------------
+        
         if (
             recentLogs.includes("docker push")
         ) {
             setStatus("push-status", "RUNNING", "running");
         }
 
-        // -------------------------
-        // SUCCESS
-        // -------------------------
+        
         if (
             recentLogs.includes("Finished -> SUCCESS") ||
             recentLogs.includes("Finished: SUCCESS")
@@ -305,9 +291,7 @@ async function fetchLogs() {
             setStatus("push-status", "SUCCESS", "success");
         }
 
-        // -------------------------
-        // FAILURE
-        // -------------------------
+        
         if (
             recentLogs.includes("Finished: FAILURE")
         ) {
