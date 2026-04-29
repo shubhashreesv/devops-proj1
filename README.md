@@ -163,8 +163,7 @@ Cache files
 
 Over time these fill disk space.
 
-Your node becomes: offline
-until storage is cleaned.
+Your node becomes: offline until storage is cleaned.
 
 Thus RUN: 
 
@@ -172,4 +171,4 @@ docker system prune -a -f
 sudo rm -rf /var/lib/jenkins/workspace/*
 sudo systemctl restart jenkins
 
-Check space: df -h
+Check space: df -h 
